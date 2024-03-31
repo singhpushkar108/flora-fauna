@@ -1,0 +1,49 @@
+<div class="container-fluid px-0 h-100">
+    <footer class="row pt-3 ">
+        <div class="row  align-self-center mx-0">
+            <div class="col-md-3 ps-4 ">
+                <h4 class="fw-semibold">About Nature Portfolio</h4>
+                
+                <ul class="list-unstyled " >
+                    <li class="mt-2 "  *ngFor="let item of aboutPort"><a href="{{item.route}}"  >{{item.opt}}</a></li>
+                </ul>
+            </div>
+    
+            <div class="col-md-3 ps-4">
+                <h4 class="fw-semibold">Discover content</h4>
+                
+                <ul class="list-unstyled ">
+                    <li class="mt-2"  *ngFor="let item of discoverContent"><a href="{{item.route}}" >{{item.opt}}</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 ps-4">
+                <h4 class="fw-semibold">Publishing policies</h4>
+                
+                <ul class="list-unstyled ">
+                    <li class="mt-2"  *ngFor="let item of publishPolicy"><a href="{{item.route}}" >{{item.opt}}</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 ps-4">
+                <h4 class="fw-semibold">Author & Researcher services</h4>
+                
+                <ul class="list-unstyled">
+                    <li class="mt-2" *ngFor="let item of researchServices"><a href="{{item.route}}" >{{item.opt}}</a></li>
+                </ul>
+            </div>
+        </div>
+    
+        <hr class="hr " />
+    
+        <div class="row mb-3 mt-0 mx-0" >
+            <ul class="list-group list-unstyled list-group-horizontal justify-content-between ">
+                <li class="me-4 ps-3 fw-lighter" *ngFor="let item of baseline" ><a href="{{item.route}}" >{{item.opt}}</a></li>
+            </ul>
+        </div>
+    
+        <hr class="hr " />
+    
+        <div class="d-flex justify-content-center">
+           <em>&copy;  2024 - Nature Portfolio. All rights reserved.</em>
+        </div>
+    </footer>
+</div>

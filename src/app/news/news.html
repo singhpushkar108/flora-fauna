@@ -1,0 +1,39 @@
+<div class="container-fluid">
+    <app-header [options] = 'options'></app-header>
+
+    <section class="row bg-warning mb-2 mt-2 ms-2 me-5 ps-3 align-items-center border-0 rounded-pill">
+        <img src="../../assets/news.png" style="width: 6%;"alt="">
+        <span class="fst-italic fw-semibold text-dark fs-2 col-10 "> Top Headlines... </span>
+
+        <!-- <div class="dropdown col-2">
+          <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Country
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href="#">India</a></li>
+              <li><a class="dropdown-item" href="#">USA</a></li>
+              <li><a class="dropdown-item" href="#">UK</a></li>
+          </ul>
+      </div> -->
+      
+    </section>
+
+    <section class="row custom ms-1">
+          <div class="card col-lg-2 align-items-center m-3 border-0 p-0 " *ngFor="let news of topHeadingDisplay">
+            <img [src]="news.urlToImage || '../../assets/no-image.jpg'"  class="card-img-top w-100" style="height:8rem;" alt="{{news.author}}">
+
+            <!-- <img src="../../assets/no-image.jpg" *ngIf="news.urlToImage == null" alt="{{news.author}}" class="card-img-top w-100 h-25"> -->
+
+            <div class="card-body custom-scroll d-flex flex-column justify-content-between px-2" >
+                <!-- <button type="button" class="btn-close float-end position-absolute top-0 end-0 p-3" ></button> -->
+                <h5 class="card-title fw-semibold text-dark">{{news.title.trim()}}</h5>
+                <a href="{{news.url}}" >Read More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- <div class="bg-warning">dsgsdgs</div> -->
+
+    <app-footer></app-footer>
+</div>
+

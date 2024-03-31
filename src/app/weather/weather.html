@@ -1,0 +1,111 @@
+<div class="container-fluid ">
+    <app-header [options] = 'options'> </app-header>
+
+    <section class="row justify-content-center mt-3 " >
+        <div class="card border-0" style="width: 50rem;">
+            <div class="card-body border rounded border-0 row pb-0 pt-0 ms-2 mt-1">
+                <div class="row ">
+                    <img class="col-1 align-self-center border-10 rounded" src="../../assets/season.png"  alt="">
+                    <h5 class="col-10 align-self-center card-title fw-semibold fs-3"><span style="color:black;">Weather Forecast [{{weatherData.city | uppercase}}]</span> </h5>
+
+                </div>
+              
+                <div class="row ">
+
+                    <aside *ngFor="let ele of weatherArr" class="col-3 mt-0 px-0 border border-top-0 border-bottom-0">
+
+                        <div class="row my-0 py-0" >
+                            <h4 class="col-12 text-center my-3 fw-semibold fs-6 " style="color:darkred" *ngIf="today != ele.dt_txt">Date [ {{ele.dt_txt}} ]</h4>
+                            <h4 class="col-12 text-center my-3 fw-semibold fs-6 " style="color:darkred" *ngIf="today == ele.dt_txt">Today</h4>
+
+                        </div>
+                        <div class="container">
+                            <hr class="my-0 border-2 border-warning">
+                          </div>
+                          
+                        
+                        <div class="row" style="width: 6rem;" >
+                            <img src = {{ele.weather[0].icon}} alt="weather icon">
+                        </div>
+
+                        <div id="weather" class="row align-items-center text-center w-100 my-0">
+                            <span class="fw-semibold col-5 p-0">{{ele.weather[0].main}}</span>
+                            <span class="col-7 fs-6">{{(ele.main.temp-273.15).toFixed(2)}} <b class="text-dark">°C</b></span>
+                        </div>
+
+                        <ul class="row mt-3 mb-0 list-unstyled custom ">
+                            <li class="d-flex align-items-center">
+                                <img src="../../assets/snowflake.png" alt="tempMin" class="me-2 col-3">
+                                <p class="mb-0 col-5">Min Temp </p> <span class="mb-0 col-1 text-center">:</span> <p class="mb-0 col-6"> {{ (ele.main.temp_min - 273.15).toFixed(2) }} <b class="text-dark">°C</b></p>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <img src="../../assets/sun.png" alt="tempMax" class="me-2">
+                                <p class="mb-0 col-5">Max Temp</p> <span class="mb-0 col-1 text-center">:</span> <p class="mb-0 col-6"> {{ (ele.main.temp_max - 273.15).toFixed(2) }} <b class="text-dark">°C</b></p>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <img src="../../assets/humidity.png" alt="humidity icon" class="me-2">
+                                <p class="mb-0 col-5">Humidity</p> <span class="mb-0 col-1 text-center">:</span> <p class="mb-0 col-6">{{ (ele.main.humidity).toFixed(2) }} <b class="text-dark">%</b></p>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <img src="../../assets/eye.png" alt="visibility icon" class="me-2">
+                                <p class="mb-0 col-5">Visibility</p> 
+                                <span class="mb-0 col-1 text-center">:</span> 
+                                <p class="mb-0 col-6"> {{ ele.visibility }} <b class="text-dark">Km</b></p>
+                            </li>
+
+
+                            <li class="d-flex align-items-center" >
+                                <img src="../../assets/sunrise.png" alt="sunrise icon" class="me-2" *ngIf="today == ele.dt_txt">
+                                <img src="../../assets/thermometer.png" alt="gauge icon" class="me-2" *ngIf="today != ele.dt_txt">
+
+
+                                <p class="mb-0 col-5" *ngIf="today == ele.dt_txt">Sunrise</p> 
+                                <p class="mb-0 col-5" *ngIf="today != ele.dt_txt">Atm Press</p>
+
+                                <span class="mb-0 col-1 text-center">:</span> 
+
+                                <p class="mb-0 col-6" *ngIf="today == ele.dt_txt"> {{ weatherData.sunrise }} <b class="text-dark">hr</b></p>
+                                <p class="mb-0 col-6" *ngIf="today != ele.dt_txt"> {{ ele.main.pressure }} <b class="text-dark">hPa</b></p>
+
+
+
+                            </li>
+                            <li class="d-flex align-items-center"  >
+                                <img src="../../assets/sunset.png" alt="sunset icon" class="me-2" *ngIf="today == ele.dt_txt">
+                                <img src="../../assets/wind.png" alt="sunrise icon" class="me-2" *ngIf="today != ele.dt_txt">
+
+
+                                <p class="mb-0 col-5" *ngIf="today == ele.dt_txt">Sunset</p> 
+                                <p class="mb-0 col-5" *ngIf="today != ele.dt_txt">Wind</p> 
+
+
+                                <span class="mb-0 col-1 text-center">:</span> 
+                                <p class="mb-0 col-6" *ngIf="today == ele.dt_txt"> {{ weatherData.sunset }} <b class="text-dark">hr</b></p>
+                                <p class="mb-0 col-6" *ngIf="today != ele.dt_txt">{{ele.wind.speed}} <b class="text-dark">m/s</b></p>
+
+
+                            </li>
+
+
+
+                        </ul>
+    
+                        
+                    </aside>
+
+                    
+                    <!-- <aside id="rightside" class="col-9 border-start">test</aside>  -->
+                </div>
+                
+            </div>
+            <hr class="bold-hr">
+            <footer>
+                <p class="fw-lighter text-muted fst-italic text-center">&copy; Weather Forecast by Openweather Api </p>
+            </footer>
+            
+          </div>
+    </section>
+
+    <!-- <app-footer></app-footer> -->
+
+</div>

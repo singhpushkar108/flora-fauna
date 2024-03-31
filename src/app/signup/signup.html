@@ -1,0 +1,125 @@
+
+<div class="container-fluid">
+    <app-header [options] = 'options'></app-header>
+    
+    
+    <section id="body" class="row justify-content-center my-3 ">
+        <div class="card text-success border-0 form-group" style="width: 55rem;height : 30rem;">
+            <div class="card-body border rounded border-0 row">
+               <div class=" col-6 align-self-center">
+                    <div class="row text-center mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="45" width="37" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#db671a" d="M384 312.7c-55.1 136.7-187.1 54-187.1 54-40.5 81.8-107.4 134.4-184.6 134.7-16.1 0-16.6-24.4 0-24.4 64.4-.3 120.5-42.7 157.2-110.1-41.1 15.9-118.6 27.9-161.6-82.2 109-44.9 159.1 11.2 178.3 45.5 9.9-24.4 17-50.9 21.6-79.7 0 0-139.7 21.9-149.5-98.1 119.1-47.9 152.6 76.7 152.6 76.7 1.6-16.7 3.3-52.6 3.3-53.4 0 0-106.3-73.7-38.1-165.2 124.6 43 61.4 162.4 61.4 162.4 .5 1.6 .5 23.8 0 33.4 0 0 45.2-89 136.4-57.5-4.2 134-141.9 106.4-141.9 106.4-4.4 27.4-11.2 53.4-20 77.5 0 0 83-91.8 172-20z"/></svg>
+                    </div>
+                    <article class="row px-2 text-warning fst-italic">
+                        Sign up now to explore the endless wonders of the forest, where every step unveils a new adventure and every moment rejuvenates the soul. Join us in preserving the beauty and biodiversity of our precious natural world – a sanctuary of serenity and harmony.
+                    </article>
+                    <div class="row text-dark text-center mt-5 fw-semibold">
+                        <p>Already have an account? <a href="/user/signIn" style="color:navajowhite">Sign In</a></p>
+                    </div>
+               </div>
+               
+               <form class="col-6 bg-white border rounded form-group pt-3" (ngSubmit)="onSubmit()" #f="ngForm"> 
+                    <h2 class="card-title fw-semibold fs-3 mt-2">Sign Up</h2>
+                    <h4 class="card-subtitle mb-1 text-muted">Please fill in this form to create an account!</h4>
+                
+                    <hr class="hr ">
+
+                    <div class="row ">
+                    <div class="col-6 h-25">
+                        <input required 
+                        ngModel 
+                        name="first_name" 
+                        type="text" 
+                        class=" form-control mb-3 " 
+                        minlength="3"
+                        maxlength="50"
+                        placeholder="First Name" 
+                        #first_name = "ngModel" 
+                        autofocus>
+                        <!-- <span class="help-block text-danger fw-lighter " style="font-size: smaller;" *ngIf="!first_name.valid && first_name.touched">Please Enter a value</span> -->
+
+                    </div>
+                    
+                    <div class="col-6 h-25">
+                        <input required 
+                        ngModel 
+                        name="last_name"
+                        type="text" 
+                        class="form-control mb-3 " 
+                        maxlength="50"
+                        #last_name = "ngModel" 
+                        placeholder="Last Name">
+                        <!-- <span class="mt-0 border border-warning help-block text-danger fw-lighter " style="font-size: smaller;" *ngIf="!last_name.valid && last_name.touched">Please Enter a value</span> -->
+
+                    </div>
+                    
+                </div>
+
+
+                    <div class="row">
+                        <div class="col h-25">
+                            <input required 
+                            ngModel 
+                            name="email" 
+                            type="email" 
+                            maxlength="100"
+                            class="form-control mb-3" 
+                            placeholder="Email" 
+                            #email = "ngModel" 
+                            onpaste="return false;"
+                            email>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <input required 
+                            ngModel 
+                            name="choose_password" 
+                            type="password" 
+                            class="form-control mb-3" 
+                            placeholder="Password"
+                            #password="ngModel"
+                            minlength="8" >
+                        </div>
+                    </div>
+        
+                    <div class="row">
+                        <div class="col">
+                            <input 
+                            required 
+                            ngModel 
+                            name="cnfrm_password" 
+                            type="password" 
+                            class="form-control mb-3" 
+                            placeholder="Confirm Password" 
+                            minlength="8" 
+                            #cnfrm_password = "ngModel"
+                            onpaste="return false;">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <input required type="checkbox" name="accept" class="mb-3" name="select"> <span> I accept the <a href="/terms">Terms</a> of Use & <a href="/privacy_policy">Privacy Policy</a></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-4">
+                            <button type="submit" [disabled]= "!f.valid" class="btn btn-success text-warning mb-3">Sign Up</button>
+                        </div>
+                        
+                        <div></div>
+                    </div>
+
+                </form> 
+            
+            </div>
+            
+            
+          </div>
+    </section> 
+
+    <app-footer></app-footer>
+</div>

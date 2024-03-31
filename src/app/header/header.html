@@ -1,0 +1,17 @@
+
+    <header class="row d-flex align-items-center justify-content-between bg-success" style="height: 3rem;">
+        <div class="col-sm-7 text-start text-warning ">
+            <img src="./assets/logo.png" alt="logo">
+            <span class="ms-3 fw-semibold fs-4">Flora-Fauna</span>
+        </div>
+        <div class="col-sm-5 d-flex justify-content-center">
+            
+            <ul class="list-unstyled w-100 d-flex justify-content-evenly mt-2 " >
+                <li  routerLinkActive="active" routerLink={{item.route}} *ngFor="let item of myMenus">{{item.name}}</li>
+            </ul>
+            <!-- <button class="mt-1 mb-1 border border-white text-warning bg-success btn-raised rounded shadow signUp" data-toggle="modal" data-target="#form">Sign Up</button> -->
+            <button type="button" class="mt-1 mb-1 border border-white text-warning bg-success btn-raised rounded shadow signUp" style="font-size: 16px;" *ngIf="blocked==false" routerLink = "/user/signUp" >Sign Up</button>
+    
+        </div>
+    </header>
+

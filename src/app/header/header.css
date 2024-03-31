@@ -1,0 +1,33 @@
+
+header{
+    color:whitesmoke;
+    
+  }
+  
+  header img{
+    width:5%;
+    cursor: pointer;
+  }
+
+  header li{
+    cursor: pointer;
+    font-size:16px;
+  }
+  
+  header ul>li:hover{
+    text-decoration: underline;
+    color:darkgreen;
+    transition: color 0.5s ease;
+  }
+
+  button:hover{
+    color:rgb(23, 242, 23);
+  }
+
+  .signUp{
+    height: 40%; 
+    width: 24%; 
+    padding: 5px 20px; 
+  }
+  
+  

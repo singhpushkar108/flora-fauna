@@ -1,0 +1,18 @@
+/* *{
+  margin:0px;
+  padding: 0px;
+}
+ */
+.card{
+  background: linear-gradient(rgba(12, 161, 63, 0.8), rgba(12, 161, 129, 0.95));
+}
+
+button:hover{
+  background-image: linear-gradient( rgba(12, 161, 129, 0.95),rgba(12, 161, 63, 0.8));
+}
+
+input.ng-invalid.ng-touched{
+  border: 1px solid red;
+}
+
+
